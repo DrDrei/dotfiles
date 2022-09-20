@@ -1,3 +1,4 @@
-alias dotfiles='/usr/bin/git --git-dir=/Users/drei/.dotfiles/ --work-tree=/Users/drei'
-alias nv='nvim'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles:config='dotfiles config --local status.showUntrackedFiles no'
 alias so='source $HOME/.bashrc && echo "Sourced bashrc."'
+alias nv='nvim'
