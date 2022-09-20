@@ -4,8 +4,9 @@ alias nv='nvim'
 # Dotfile Repo Configurations
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfiles:config='dotfiles config --local status.showUntrackedFiles no'
-alias dot:add='dotfiles add -u'
-alias dot:co='dotfiles commit -m'
-alias dot:push='dotfiles push'
-alias dot:status='dotfiles status'
+alias do:add='dotfiles add'
+alias do:sync='dotfiles add -u'
+alias do:co='dotfiles commit -m'
+alias do:push='dotfiles push'
+alias do:status='dotfiles status'
 
