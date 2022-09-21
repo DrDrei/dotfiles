@@ -39,6 +39,8 @@ return packer.startup(function(use)
   -- Packer
   use("wbthomason/packer.nvim")
 
+  use("Mofiqul/vscode.nvim")
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
