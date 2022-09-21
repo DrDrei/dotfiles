@@ -39,9 +39,14 @@ return packer.startup(function(use)
   -- Packer
   use("wbthomason/packer.nvim")
 
+  -- Telescope
+  use("nvim-lua/plenary.nvim")
+  use("nvim-telescope/telescope.nvim")
+
   -- Colorscheme
   use("Mofiqul/vscode.nvim")
 
+  -- NvimTree
   use("kyazdani42/nvim-tree.lua")
 
   if PACKER_BOOTSTRAP then

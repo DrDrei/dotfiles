@@ -35,3 +35,15 @@ keymap("n", "<S-h>", ":bprevious<cr>", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>ft", ":NvimTreeFindFile<cr>", opts)
 
+-- Telescope
+keymap("n", "<leader>ff", ":Telescope find_files hidden=true<cr>", opts)
+keymap("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fh", ":Telescope help_tags<cr>", opts)
+keymap("n", "<leader>fc", ":Telescope git_commits<cr>", opts)
+keymap("n", "<leader>fu", ":Telescope buffers<cr>", opts)
+keymap("n", "<leader>fq", ":Telescope quickfixhistory<cr>", opts)
+keymap("n", "<leader>fj", ":Telescope grep_string<cr>", opts)
+keymap("n", "<leader>fp", ":Telescope projects<cr>", opts)
+keymap("n", "<leader>fb", ":Telescope git_branches<cr>", opts)
+keymap("n", "<leader>fy", ':lua require("telescope.builtin").grep_string({search = vim.fn.getreg()})<cr><esc>', opts)
+
