@@ -49,6 +49,9 @@ return packer.startup(function(use)
   -- NvimTree
   use("kyazdani42/nvim-tree.lua")
 
+  -- VimFugitive
+  use("tpope/vim-fugitive")
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

@@ -45,6 +45,7 @@ keymap("n", "<leader>fq", ":Telescope quickfixhistory<cr>", opts)
 keymap("n", "<leader>fj", ":Telescope grep_string<cr>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<cr>", opts)
 keymap("n", "<leader>fb", ":Telescope git_branches<cr>", opts)
+keymap("n", "<leader>gt", ":Telescope git_stash<cr>", opts)
 keymap("n", "<leader>fy", ':lua require("telescope.builtin").grep_string({search = vim.fn.getreg()})<cr><esc>', opts)
 
 -- Quickfix/Location Lists
@@ -53,3 +54,12 @@ keymap("n", "<C-p>", ":cp<cr>zz", opts)
 keymap("n", "<C-n>", ":cnext<cr>zz", opts)
 keymap("n", "<leader>cc", ":cclose<cr>zz", opts)
 
+-- Git things
+keymap("n", "<leader>gs", ":Git<CR>:resize 16<cr>", opts)
+keymap("n", "<leader>gf", ":Git fetch --prune<cr>", opts)
+keymap("n", "<leader>go", ":Git commit --no-verify<cr>", opts)
+keymap("n", "<leader>gr", ":Git rebase -i HEAD~", opts)
+keymap("n", "<leader>gl", ":Git pull<cr>", opts)
+keymap("n", "<leader>gp", ":Git push --no-verify<cr>", opts)
+keymap("n", "<leader>gP", ":Git push -f --no-verify<cr>", opts)
+keymap("n", "<leader>gb", ":Git blame<cr>", opts)
