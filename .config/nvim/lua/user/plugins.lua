@@ -36,26 +36,18 @@ packer.init({
 })
 
 return packer.startup(function(use)
-  -- Packer
-  use("wbthomason/packer.nvim")
-
-  -- Telescope
-  use("nvim-lua/plenary.nvim")
-  use("nvim-telescope/telescope.nvim")
-
-  -- Colorscheme
   use("Mofiqul/vscode.nvim")
-
-  -- NvimTree
   use("kyazdani42/nvim-tree.lua")
-
-  -- VimFugitive
   use("tpope/vim-fugitive")
-
   use("nvim-lualine/lualine.nvim")
   use("akinsho/bufferline.nvim")
   use("kyazdani42/nvim-web-devicons")
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = { {'nvim-lua/plenary.nvim'} },
+  })
 
+  use("wbthomason/packer.nvim")
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
