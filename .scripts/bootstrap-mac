@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo 'Checking brew installation...'
 which -s brew
 if [[ $? != 0 ]] ; then
   # Install Homebrew
@@ -8,18 +9,20 @@ else
   brew update
 fi
 
-# Install packages
-for package in neovim tmux node rg fd
+echo 'Checking brew packages...'
+for package in neovim tmux node rg fd ruby
 do 
   if ! brew info $package &>/dev/null; then
     brew install $package
   fi
 done
 
-# Install casks
+echo 'Checking brew casks...'
 for cask in brave-browser signal
 do 
   if ! brew info $cask &>/dev/null; then
     brew install --cask $cask
   fi
 done
+
+echo 'Bootstrapping complete.'
