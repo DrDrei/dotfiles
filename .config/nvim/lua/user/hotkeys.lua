@@ -15,6 +15,7 @@ keymap("n", "<leader>fo", ":w | !open %<cr>", opts)
 keymap("n", "<leader>fm", ":lua vim.lsp.buf.formatting_sync()<cr>", opts)
 keymap("n", "U", "<C-r>", opts)
 
+
 -- Recenter when scrolling
 keymap("n", "<C-u>", "<C-u>zz", term_opts)
 keymap("n", "<C-d>", "<C-d>zz", term_opts)
@@ -29,3 +30,8 @@ keymap("n", "J", "mzJ`z", opts)
 -- Navigation
 keymap("n", "<S-l>", ":bnext<cr>", opts)
 keymap("n", "<S-h>", ":bprevious<cr>", opts)
+
+-- NvimTree
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>ft", ":NvimTreeFindFile<cr>", opts)
+

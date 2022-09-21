@@ -32,16 +32,11 @@ local options = {
   ignorecase = true,
   termguicolors = true,
   hidden = true,
-  foldmethod = 'indent',
-  foldlevel = 4,
 }
 
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
-
-vim.g.netrw_browse_split = 4
-vim.g.netrw_liststyle = 3
 
 vim.opt.cpoptions:append("y") -- save yanks to allow redo with '.' key
 vim.opt.shortmess:append("c")

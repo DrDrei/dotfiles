@@ -39,7 +39,10 @@ return packer.startup(function(use)
   -- Packer
   use("wbthomason/packer.nvim")
 
+  -- Colorscheme
   use("Mofiqul/vscode.nvim")
+
+  use("kyazdani42/nvim-tree.lua")
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
