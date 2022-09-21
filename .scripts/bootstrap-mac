@@ -1,0 +1,25 @@
+#!/bin/bash
+
+which -s brew
+if [[ $? != 0 ]] ; then
+  # Install Homebrew
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  brew update
+fi
+
+# Install packages
+for package in neovim tmux node rg fd
+do 
+  if ! brew info $package &>/dev/null; then
+    brew install $package
+  fi
+done
+
+# Install casks
+for cask in brave-browser signal
+do 
+  if ! brew info $cask &>/dev/null; then
+    brew install --cask $cask
+  fi
+done
