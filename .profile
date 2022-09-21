@@ -9,3 +9,6 @@ alias do:sync='dotfiles add -u'
 alias do:co='dotfiles commit -m'
 alias do:push='dotfiles push'
 alias do:status='dotfiles status'
+
+# Display Configs
+alias disp='$HOME/.scripts/display-placer'

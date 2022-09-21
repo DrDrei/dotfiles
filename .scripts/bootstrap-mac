@@ -25,4 +25,9 @@ do
   fi
 done
 
+echo 'Installing display-placer...'
+if ! brew info displayplacer &>/dev/null; then
+  brew tap jakehilborn/jakehilborn && brew install displayplacer
+fi
+
 echo 'Bootstrapping complete.'

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+PS3='Choose your configuration: '
+configs=("home" "quit")
+select config in "${configs[@]}"; do
+  case $config in
+    "home")
+      displayplacer "id:2810435A-5CDE-107D-F1B9-891EE475911B res:1920x1080 hz:60 color_depth:8 scaling:off origin:(0,0) degree:0" "id:35B52018-7DF3-48BB-CCC0-A530925E8CFE res:1920x1080 hz:60 color_depth:8 scaling:off origin:(1920,0) degree:0"
+      exit
+      ;;
+    "quit")
+      exit
+      ;;
+    *)
+      echo 'Invalid config'
+      exit
+      ;;
+  esac
+done
+
