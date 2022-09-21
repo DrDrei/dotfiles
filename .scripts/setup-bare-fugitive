@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# https://stackoverflow.com/a/66624354
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --local core.worktree $HOME
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --unset core.bare
