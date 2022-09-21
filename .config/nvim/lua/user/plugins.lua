@@ -52,6 +52,10 @@ return packer.startup(function(use)
   -- VimFugitive
   use("tpope/vim-fugitive")
 
+  use("nvim-lualine/lualine.nvim")
+  use("akinsho/bufferline.nvim")
+  use("kyazdani42/nvim-web-devicons")
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
