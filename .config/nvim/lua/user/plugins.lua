@@ -36,16 +36,28 @@ packer.init({
 })
 
 return packer.startup(function(use)
-  use("Mofiqul/vscode.nvim")
-  use("kyazdani42/nvim-tree.lua")
-  use("tpope/vim-fugitive")
-  use("nvim-lualine/lualine.nvim")
-  use("akinsho/bufferline.nvim")
-  use("kyazdani42/nvim-web-devicons")
+  use({
+    "Mofiqul/vscode.nvim",
+    "kyazdani42/nvim-tree.lua",
+    "tpope/vim-fugitive",
+    "nvim-lualine/lualine.nvim",
+    "akinsho/bufferline.nvim",
+    "kyazdani42/nvim-web-devicons",
+    "akinsho/toggleterm.nvim",
+  })
+
+  use({
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  })
+  
   use({
     "nvim-telescope/telescope.nvim",
     requires = { {'nvim-lua/plenary.nvim'} },
   })
+  
   use({
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
