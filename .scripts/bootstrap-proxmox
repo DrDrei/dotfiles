@@ -1,0 +1,26 @@
+#!/bin/bash
+
+pveversion
+
+source="deb http://download.proxmox.com/debian bullseye pve-no-subscription"
+grep -qxF "$source" /etc/apt/sources.list || echo "$source" >> /etc/apt/sources.list
+
+enterprise="deb https://enterprise.proxmox.com/debian/pve bullseye pve-enterprise"
+sed -i '' -e /pve-enterprise/d /etc/apt/sources.list.d/pve-enterprise.list
+
+echo "Removing local-lvm and resizing disks."
+lvremove /dev/pve/data
+lvresize -l +100%FREE /dev/pve/root
+resize2fs /dev/mapper/pve-root
+
+apt update
+apt upgrade -y 
+apt dist-upgrade -y
+
+reboot
+
+# Post Installation Steps
+# Remove local-lvm from Datacenter > Storage
+# Enable VLAN Aware for the Network Bridge
+# Add NFS Share to storage
+# Review scheduled backups
