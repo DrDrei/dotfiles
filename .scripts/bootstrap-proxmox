@@ -9,7 +9,7 @@ enterprise="deb https://enterprise.proxmox.com/debian/pve bullseye pve-enterpris
 sed -i '' -e /pve-enterprise/d /etc/apt/sources.list.d/pve-enterprise.list
 
 echo "Removing local-lvm and resizing disks."
-lvremove /dev/pve/data
+lvremove /dev/pve/data -y
 lvresize -l +100%FREE /dev/pve/root
 resize2fs /dev/mapper/pve-root
 
@@ -24,3 +24,4 @@ reboot
 # Enable VLAN Aware for the Network Bridge
 # Add NFS Share to storage
 # Review scheduled backups
+# To change # of votes a node has go to /etc/pve/corosync.conf; update votes + version
