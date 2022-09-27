@@ -15,6 +15,7 @@ keymap("n", "<leader>fo", ":w | !open %<cr>", opts)
 keymap("n", "<leader>fm", ":lua vim.lsp.buf.formatting_sync()<cr>", opts)
 keymap("n", "U", "<C-r>", opts)
 
+keymap("n", "<leader>Q", ":BufferLineCloseLeft<cr>:BufferLineCloseRight<cr>", term_opts)
 
 -- Recenter when scrolling
 keymap("n", "<C-u>", "<C-u>zz", term_opts)
