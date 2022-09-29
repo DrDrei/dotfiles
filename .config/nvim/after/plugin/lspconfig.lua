@@ -1,3 +1,8 @@
+local status_ok, lspconfig = pcall(require, "lspconfig")
+if not status_ok then
+  return
+end
+
 local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true }
 
@@ -12,10 +17,23 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 end
 
-require("lspconfig")["tsserver"].setup({
-	on_attach = on_attach,
-})
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require("lspconfig")["sumneko_lua"].setup({
+local opts = {
+	capabilities = capabilities,
+	on_attach = on_attach
+}
+
+lspconfig.tsserver.setup(opts)
+
+lspconfig.sumneko_lua.setup {
+	capabilities = capabilities,
 	on_attach = on_attach,
-})
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			}
+		}
+	}
+}

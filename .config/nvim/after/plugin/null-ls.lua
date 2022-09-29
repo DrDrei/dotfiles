@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostrics
+local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
 
 null_ls.setup({
@@ -16,6 +16,7 @@ null_ls.setup({
   -- end,
   sources = {
     formatting.stylua,
+    formatting.prettier,
     diagnostics.eslint,
     completion.spell,
   },
