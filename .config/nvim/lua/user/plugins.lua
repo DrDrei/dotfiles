@@ -37,6 +37,20 @@ packer.init({
 
 return packer.startup(function(use)
   use({
+    'williamboman/mason.nvim',
+    'jose-elias-alvarez/null-ls.nvim',
+    'neovim/nvim-lspconfig',
+  })
+  use({
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+  })
+  use({
     "Mofiqul/vscode.nvim",
     "kyazdani42/nvim-tree.lua",
     "tpope/vim-fugitive",
@@ -49,15 +63,15 @@ return packer.startup(function(use)
   use({
     "windwp/nvim-autopairs",
     config = function()
-      require("nvim-autopairs").setup {}
+      require("nvim-autopairs").setup({})
     end
   })
-  
+
   use({
     "nvim-telescope/telescope.nvim",
-    requires = { {'nvim-lua/plenary.nvim'} },
+    requires = { { 'nvim-lua/plenary.nvim' } },
   })
-  
+
   use({
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,

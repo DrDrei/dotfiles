@@ -1,7 +1,7 @@
 local options = {
   backup = false, -- no backupfile
   clipboard = "unnamedplus", -- access system clipboard
-  completeopt = { "menuone", "noselect" }, -- set cmp stuff
+  completeopt = { "menu", "menuone", "noselect" }, -- set cmp stuff
   fileencoding = "utf-8", -- encode all files to utf-8
   hlsearch = true, -- highlight search
   mouse = "a", -- allow mouse

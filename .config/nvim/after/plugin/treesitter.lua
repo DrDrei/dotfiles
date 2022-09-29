@@ -6,9 +6,16 @@ configs.setup({
   ignore_install = { "" },
   ensure_installed = {
     "javascript",
+    "typescript",
     "jsdoc",
     "tsx",
-    "typescript",
+    "lua",
+    "tsx",
+    "json",
+    "bash",
+    "css",
+    "yaml",
+    "html",
   },
   highlight = {
     enable = true,
