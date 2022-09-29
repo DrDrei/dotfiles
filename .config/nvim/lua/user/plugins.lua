@@ -38,9 +38,11 @@ packer.init({
 return packer.startup(function(use)
   use({
     'williamboman/mason.nvim',
+    "williamboman/mason-lspconfig.nvim",
     'jose-elias-alvarez/null-ls.nvim',
     'neovim/nvim-lspconfig',
   })
+
   use({
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
@@ -50,6 +52,7 @@ return packer.startup(function(use)
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
   })
+
   use({
     "Mofiqul/vscode.nvim",
     "kyazdani42/nvim-tree.lua",
