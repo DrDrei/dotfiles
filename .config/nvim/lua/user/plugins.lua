@@ -37,6 +37,11 @@ packer.init({
 
 return packer.startup(function(use)
   use({
+    "nvim-telescope/telescope.nvim",
+    'nvim-lua/plenary.nvim'
+  })
+
+  use({
     'williamboman/mason.nvim',
     "williamboman/mason-lspconfig.nvim",
     'jose-elias-alvarez/null-ls.nvim',
@@ -49,8 +54,8 @@ return packer.startup(function(use)
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
+    'hrsh7th/cmp-vsnip',
+    'hrsh7th/vim-vsnip',
   })
 
   use({
@@ -70,10 +75,6 @@ return packer.startup(function(use)
     end
   })
 
-  use({
-    "nvim-telescope/telescope.nvim",
-    requires = { { 'nvim-lua/plenary.nvim' } },
-  })
 
   use({
     'nvim-treesitter/nvim-treesitter',
