@@ -68,6 +68,7 @@ return packer.startup(function(use)
 		"akinsho/toggleterm.nvim",
 		"dhruvmanila/telescope-bookmarks.nvim",
 		"phaazon/hop.nvim",
+		"numToStr/Comment.nvim",
 	})
 
 	use({
