@@ -9,11 +9,6 @@ local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
 	debug = false,
-	on_attach = function(client)
-		if client.server_capabilities.document_formatting then
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
-		end
-	end,
 	sources = {
 		formatting.prettier,
 		formatting.stylua,
