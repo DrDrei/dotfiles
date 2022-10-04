@@ -10,7 +10,6 @@ vim.diagnostic.config({
 
 -- All the clients and their configs that we want to use
 local clients = {
-	astro = {},
 	sumneko_lua = {
 		single_file_support = true,
 		settings = {
@@ -22,37 +21,17 @@ local clients = {
 		},
 	},
 	tailwindcss = {},
-	tsserver = {},
-}
-
-local lsp_formatting = function(bufnr)
-	vim.lsp.buf.format({
-		bufnr = bufnr,
-		filter = function(client)
-			for key in pairs(clients) do
-				local filter = true
-				if key == client.name then
-					filter = false
-				end
-				return filter
-			end
+	tsserver = {
+		on_attach = function(client)
+			client.server_capabilities.documentFormattingProvider = false
 		end,
-	})
-end
-
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+	},
+}
 
 lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, {
 	capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-	on_attach = function(_, bufnr)
+	on_attach = function()
 		vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = augroup,
-			buffer = bufnr,
-			callback = function()
-				lsp_formatting(bufnr)
-			end,
-		})
 	end,
 })
 
