@@ -17,7 +17,6 @@ keymap("n", "<leader>so", ":so %<cr>", opts)
 keymap("n", "<leader>sf", ":w<cr>", opts)
 keymap("n", "U", "<C-r>", opts)
 
-
 keymap("n", "<leader>Q", ":BufferLineCloseLeft<cr>:BufferLineCloseRight<cr>", term_opts)
 
 -- Recenter when scrolling
@@ -68,3 +67,4 @@ keymap("n", "<leader>gl", ":Git pull<cr>", opts)
 keymap("n", "<leader>gp", ":Git push --no-verify<cr>", opts)
 keymap("n", "<leader>gP", ":Git push -f --no-verify<cr>", opts)
 keymap("n", "<leader>gb", ":Git blame<cr>", opts)
+keymap("n", "<leader>gw", ":Gwrite<cr>", opts)
