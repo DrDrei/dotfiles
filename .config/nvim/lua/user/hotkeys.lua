@@ -77,8 +77,6 @@ keymap("n", "<leader>gw", ":Gwrite<cr>", opts)
 keymap("n", ",,", "@@", opts)
 
 -- User Commands
-
--- Run test watcher against current test file
 vim.api.nvim_create_user_command("TestFile", function()
 	local filePath = vim.fn.expand("%:p")
 	if not string.find(filePath, ".test.") then
@@ -90,4 +88,8 @@ end, {})
 
 vim.api.nvim_create_user_command("ServeApp", function()
 	require("toggleterm").exec("yarn:serve", 1)
+end, {})
+
+vim.api.nvim_create_user_command("RunDev", function()
+	require("toggleterm").exec("npm i && npm run dev", 1, 1)
 end, {})
