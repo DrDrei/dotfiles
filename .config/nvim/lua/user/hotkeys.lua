@@ -72,3 +72,6 @@ keymap("n", "<leader>gp", ":Git push --no-verify<cr>", opts)
 keymap("n", "<leader>gP", ":Git push -f --no-verify<cr>", opts)
 keymap("n", "<leader>gb", ":Git blame<cr>", opts)
 keymap("n", "<leader>gw", ":Gwrite<cr>", opts)
+
+-- Repeat macro
+keymap("n", ",,", "@@", opts)
