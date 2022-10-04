@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+telescope.load_extension('bookmarks')
+
 local actions = require("telescope.actions")
 local picker_mode = { initial_mode = "normal" }
 

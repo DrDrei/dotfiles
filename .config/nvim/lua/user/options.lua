@@ -32,6 +32,7 @@ local options = {
   ignorecase = true,
   termguicolors = true,
   hidden = true,
+  ch = 0, -- command height
 }
 
 vim.g.loaded_ruby_provider = 0

@@ -17,6 +17,7 @@ keymap("n", "<leader>so", ":so %<cr>", opts)
 keymap("n", "<leader>sf", ":w<cr>", opts)
 keymap("n", "U", "<C-r>", opts)
 
+
 keymap("n", "<leader>Q", ":BufferLineCloseLeft<cr>:BufferLineCloseRight<cr>", term_opts)
 
 -- Recenter when scrolling
@@ -48,6 +49,7 @@ keymap("n", "<leader>fq", ":Telescope quickfixhistory<cr>", opts)
 keymap("n", "<leader>fj", ":Telescope grep_string<cr>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<cr>", opts)
 keymap("n", "<leader>fb", ":Telescope git_branches<cr>", opts)
+keymap("n", "<leader>fk", ":Telescope bookmarks<cr>", opts)
 keymap("n", "<leader>gt", ":Telescope git_stash<cr>", opts)
 keymap("n", "<leader>fy", ':lua require("telescope.builtin").grep_string({search = vim.fn.getreg()})<cr><esc>', opts)
 

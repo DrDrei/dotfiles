@@ -66,6 +66,7 @@ return packer.startup(function(use)
     "akinsho/bufferline.nvim",
     "kyazdani42/nvim-web-devicons",
     "akinsho/toggleterm.nvim",
+    "dhruvmanila/telescope-bookmarks.nvim"
   })
 
   use({
