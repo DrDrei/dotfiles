@@ -58,6 +58,11 @@ return packer.startup(function(use)
 		"hrsh7th/vim-vsnip",
 	})
 
+	-- Snippets
+	use({
+		"xabikos/vscode-javascript",
+	})
+
 	use({
 		"Mofiqul/vscode.nvim",
 		"kyazdani42/nvim-tree.lua",

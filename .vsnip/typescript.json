@@ -1,0 +1,6 @@
+{
+  "filename": {
+    "prefix": ["clg"],
+    "body": "print('Drei: $1', $0)"
+  }
+}
