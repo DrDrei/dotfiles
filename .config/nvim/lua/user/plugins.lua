@@ -38,24 +38,24 @@ packer.init({
 return packer.startup(function(use)
   use({
     "nvim-telescope/telescope.nvim",
-    'nvim-lua/plenary.nvim'
+    "nvim-lua/plenary.nvim",
   })
 
   use({
-    'williamboman/mason.nvim',
+    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    'jose-elias-alvarez/null-ls.nvim',
-    'neovim/nvim-lspconfig',
+    "jose-elias-alvarez/null-ls.nvim",
+    "neovim/nvim-lspconfig",
   })
 
   use({
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip',
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/vim-vsnip",
   })
 
   use({
@@ -66,20 +66,21 @@ return packer.startup(function(use)
     "akinsho/bufferline.nvim",
     "kyazdani42/nvim-web-devicons",
     "akinsho/toggleterm.nvim",
-    "dhruvmanila/telescope-bookmarks.nvim"
+    "dhruvmanila/telescope-bookmarks.nvim",
   })
 
   use({
     "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup({})
-    end
+    end,
   })
 
-
   use({
-    'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
   })
 
   use("wbthomason/packer.nvim")
