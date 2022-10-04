@@ -38,6 +38,10 @@ keymap("n", "<S-h>", ":bprevious<cr>", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>ft", ":NvimTreeFindFile<cr>", opts)
 
+-- Hop Support
+keymap("n", "<leader>fw", ":HopWord<cr>", opts)
+keymap("n", "<leader>fc", ":HopChar2<cr>", opts)
+
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files hidden=true<cr>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
