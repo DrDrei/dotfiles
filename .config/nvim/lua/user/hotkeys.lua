@@ -75,3 +75,19 @@ keymap("n", "<leader>gw", ":Gwrite<cr>", opts)
 
 -- Repeat macro
 keymap("n", ",,", "@@", opts)
+
+-- User Commands
+
+-- Run test watcher against current test file
+vim.api.nvim_create_user_command("TestFile", function()
+	local filePath = vim.fn.expand("%:p")
+	if not string.find(filePath, ".test.") then
+		print("This is not a test file.")
+		return
+	end
+	require("toggleterm").exec("yarn:test:i " .. filePath, 2)
+end, {})
+
+vim.api.nvim_create_user_command("ServeApp", function()
+	require("toggleterm").exec("yarn:serve", 1)
+end, {})

@@ -1,6 +1,6 @@
 {
   "filename": {
     "prefix": ["clg"],
-    "body": "print('Drei: $1', $0)"
+    "body": "console.log('Drei: $1', $0)"
   }
 }
