@@ -86,10 +86,18 @@ vim.api.nvim_create_user_command("TestFile", function()
 	require("toggleterm").exec("yarn:test:i " .. filePath, 2)
 end, {})
 
+vim.api.nvim_create_user_command("TestAll", function()
+	require("toggleterm").exec("yarn:test", 2)
+end, {})
+
 vim.api.nvim_create_user_command("ServeApp", function()
 	require("toggleterm").exec("yarn:serve", 1)
 end, {})
 
 vim.api.nvim_create_user_command("RunDev", function()
 	require("toggleterm").exec("npm i && npm run dev", 1, 1)
+end, {})
+
+vim.api.nvim_create_user_command("Build", function()
+	require("toggleterm").exec("yarn", 1)
 end, {})
