@@ -17,10 +17,10 @@ null_ls.setup({
 	sources = {
 		formatting.prettierd,
 		formatting.stylua,
-		diagnostics.eslint.with({
+		diagnostics.eslint_d.with({
 			prefer_local = "node_modules/.bin",
 		}),
-		code_actions.eslint.with({
+		code_actions.eslint_d.with({
 			prefer_local = "node_modules/.bin",
 		}),
 	},
