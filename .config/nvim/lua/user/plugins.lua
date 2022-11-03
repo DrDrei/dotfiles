@@ -75,12 +75,20 @@ return packer.startup(function(use)
 		"phaazon/hop.nvim",
 		"numToStr/Comment.nvim",
 		"JoosepAlviste/nvim-ts-context-commentstring",
+		"styled-components/vim-styled-components",
 	})
 
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup({})
+		end,
+	})
+
+	use({
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup({})
 		end,
 	})
 
