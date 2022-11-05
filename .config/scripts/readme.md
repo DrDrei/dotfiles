@@ -8,3 +8,4 @@
 ## Bootstraps
 
 - `bash -c "$(curl https://raw.githubusercontent.com/DrDrei/dotfiles/main/.config/scripts/bootstrap-proxmox)"`
+- `bash -c "$(curl https://raw.githubusercontent.com/DrDrei/dotfiles/main/.config/scripts/bootstrap-debian)"`
