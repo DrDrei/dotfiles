@@ -4,6 +4,7 @@
 
 - `diskutil list; df -Hl;`
 - `dd bs=1M if=iso of=/dev/your_usb status=progress`
+- `apt update && apt install curl`
 
 ## Bootstraps
 
