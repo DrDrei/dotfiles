@@ -15,6 +15,8 @@
 # alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # dotfiles checkout
 # dotfiles config --local status.showUntrackedFiles no
+# git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --local core.worktree $HOME
+# git --git-dir=$HOME/.dotfiles --work-tree=$HOME config --unset core.bare
 
 # Dotfiles Repo Management
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
