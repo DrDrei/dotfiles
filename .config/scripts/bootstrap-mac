@@ -11,7 +11,7 @@ fi
 
 echo 'Checking brew packages...'
 brew tap jakehilborn/jakehilborn 
-for package in neovim tmux node rg fd ruby displayplacer
+for package in neovim tmux node rg fd ruby
 do 
   if ! brew info $package &>/dev/null; then
     brew install $package
