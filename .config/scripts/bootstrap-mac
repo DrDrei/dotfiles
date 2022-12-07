@@ -11,20 +11,10 @@ fi
 
 echo 'Checking brew packages...'
 brew tap jakehilborn/jakehilborn 
-for package in neovim tmux node rg fd ruby
-do 
-  if ! brew info $package &>/dev/null; then
-    brew install $package
-  fi
-done
+brew install neovim tmux node rg fd ruby 
 
 echo 'Checking brew casks...'
 brew tap homebrew/cask-fonts
-for cask in brave-browser signal iterm2 font-hack-nerd-font
-do 
-  if ! brew info $cask &>/dev/null; then
-    brew install --cask $cask
-  fi
-done
+brew install --cask brave-browser signal iterm2 font-hack-nerd-font
 
 echo 'Bootstrapping complete.'
