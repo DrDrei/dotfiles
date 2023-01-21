@@ -24,4 +24,5 @@ reboot
 # Enable VLAN Aware for the Network Bridge
 # Add NFS Share to storage
 # Review scheduled backups
+# update tmpdir to /tmp inside /etc/vzdump.conf
 # To change # of votes a node has go to /etc/pve/corosync.conf; update votes + version
