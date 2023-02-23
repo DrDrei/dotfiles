@@ -54,12 +54,14 @@ keymap("n", "<leader>fp", ":Telescope projects<cr>", opts)
 keymap("n", "<leader>fb", ":Telescope git_branches<cr>", opts)
 keymap("n", "<leader>fk", ":Telescope bookmarks<cr>", opts)
 keymap("n", "<leader>gt", ":Telescope git_stash<cr>", opts)
+keymap("n", "<leader>fm", ':lua require("harpoon.ui").toggle_quick_menu()<cr>', opts)
+keymap("n", "<leader>fa", ':lua require("harpoon.mark").add_file()<cr>', opts)
 keymap("n", "<leader>fy", ':lua require("telescope.builtin").grep_string({search = vim.fn.getreg()})<cr><esc>', opts)
 
 -- Quickfix/Location Lists
 keymap("n", "<C-q>", ":copen<cr>zz", opts)
-keymap("n", "<C-p>", ":cp<cr>zz", opts)
 keymap("n", "<C-n>", ":cnext<cr>zz", opts)
+keymap("n", "<C-p>", ":cp<cr>zz", opts)
 keymap("n", "<leader>cc", ":cclose<cr>zz", opts)
 
 -- Git things

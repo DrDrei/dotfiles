@@ -79,6 +79,13 @@ return packer.startup(function(use)
 	})
 
 	use({
+		"ThePrimeagen/harpoon",
+		config = function()
+			require("harpoon").setup()
+		end,
+	})
+
+	use({
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup({})
