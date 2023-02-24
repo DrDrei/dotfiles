@@ -32,9 +32,6 @@ local options = {
 	ignorecase = true,
 	termguicolors = true,
 	hidden = true,
-	foldlevel = 6,
-	foldmethod = "expr",
-	foldexpr = "nvim_treesitter#foldexpr()",
 }
 
 vim.g.loaded_ruby_provider = 0
