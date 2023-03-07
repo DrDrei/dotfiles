@@ -51,7 +51,12 @@ keymap("n", "<leader>fu", ":Telescope buffers<cr>", opts)
 keymap("n", "<leader>fq", ":Telescope quickfixhistory<cr>", opts)
 keymap("n", "<leader>fj", ":Telescope grep_string<cr>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<cr>", opts)
-keymap("n", "<leader>fb", ":Telescope git_branches<cr>", opts)
+keymap(
+	"n",
+	"<leader>fb",
+	"<Cmd>lua require('telescope.builtin').git_branches({show_remote_tracking_branches=false})<cr>",
+	opts
+)
 keymap("n", "<leader>fk", ":Telescope bookmarks<cr>", opts)
 keymap("n", "<leader>gt", ":Telescope git_stash<cr>", opts)
 keymap("n", "<leader>fm", ':lua require("harpoon.ui").toggle_quick_menu()<cr>', opts)

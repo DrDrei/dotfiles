@@ -18,7 +18,6 @@ cmp.setup({
 			vim.fn["vsnip#anonymous"](args.body)
 		end,
 	},
-
 	mapping = cmp.mapping.preset.insert({
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
@@ -42,7 +41,6 @@ cmp.setup({
 		["<C-h>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	}),
-
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "vsnip" },
