@@ -12,7 +12,13 @@ s:1920x1080 hz:60 color_depth:8 scaling:off origin:(1920,0) degree:0"'
 # Stitch all images together in current dir
 alias convert:all="convert -append *.png out.png"
 
+# kasa integration: https://github.com/python-kasa/python-kasa
+setup-device() {
+  kasa --host 192.168.0.1 wifi join $1
+}
+
 for FILE in ~/.config/zsh/*; do
     source $FILE
 done
+
 . "$HOME/.cargo/env"
