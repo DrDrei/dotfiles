@@ -15,6 +15,7 @@ configs.setup({
 		"json",
 		"lua",
 		"tsx",
+		"prisma",
 		"typescript",
 		"yaml",
 	},
