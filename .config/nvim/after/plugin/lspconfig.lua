@@ -10,15 +10,6 @@ vim.diagnostic.config({
 
 -- All the clients and their configs that we want to use
 local servers = {
-	lua_ls = {
-		single_file_support = true,
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-			telemetry = { enable = false },
-		},
-	},
 	tailwindcss = {},
 	tsserver = {},
 }
