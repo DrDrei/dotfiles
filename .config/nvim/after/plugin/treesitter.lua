@@ -30,7 +30,3 @@ configs.setup({
 		enable_autocmd = false,
 	},
 })
-
-local styled_fix = require("user.styled-fix")
-styled_fix.directives()
-styled_fix.queries()

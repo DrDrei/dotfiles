@@ -75,7 +75,6 @@ return packer.startup(function(use)
 		"phaazon/hop.nvim",
 		"numToStr/Comment.nvim",
 		"JoosepAlviste/nvim-ts-context-commentstring",
-		"styled-components/vim-styled-components",
 	})
 
 	use({
