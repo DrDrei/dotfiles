@@ -1,123 +1,39 @@
 local fn = vim.fn
 
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
+-- Automatically install lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+-- vim.cmd([[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
+-- ]])
 
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
+-- local status_ok, packer = pcall(require, "packer")
+-- if not status_ok then
+-- 	return
+-- end
+--
+-- packer.init({
+-- 	display = {
+-- 		open_fn = function()
+-- 			return require("packer.util").float({})
+-- 		end,
+-- 	},
+-- })
 
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({})
-		end,
-	},
-})
-
-return packer.startup(function(use)
-	use({
-		"nvim-telescope/telescope.nvim",
-		"nvim-lua/plenary.nvim",
-	})
-
-	use({
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"jose-elias-alvarez/null-ls.nvim",
-		"neovim/nvim-lspconfig",
-	})
-
-	use({
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
-		"hrsh7th/nvim-cmp",
-		"hrsh7th/cmp-vsnip",
-		"hrsh7th/vim-vsnip",
-	})
-
-	-- Snippets
-	use({
-		"xabikos/vscode-javascript",
-	})
-
-	use({
-		"Mofiqul/vscode.nvim",
-		"kyazdani42/nvim-tree.lua",
-		"tpope/vim-fugitive",
-		"nvim-lualine/lualine.nvim",
-		"akinsho/bufferline.nvim",
-		"kyazdani42/nvim-web-devicons",
-		"akinsho/toggleterm.nvim",
-		"dhruvmanila/telescope-bookmarks.nvim",
-		"phaazon/hop.nvim",
-		"numToStr/Comment.nvim",
-		"JoosepAlviste/nvim-ts-context-commentstring",
-	})
-
-	use({
-		"ThePrimeagen/harpoon",
-		config = function()
-			require("harpoon").setup()
-		end,
-	})
-
-	use({
-		"github/copilot.vim",
-	})
-
-	use({
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	})
-
-	use({
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup({})
-		end,
-	})
-
-	use({
-		"ggandor/leap.nvim",
-		config = function()
-			require("leap").add_default_mappings()
-		end,
-	})
-
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			require("nvim-treesitter.install").update({ with_sync = true })
-		end,
-	})
-
-	use("wbthomason/packer.nvim")
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
-end)
+require("lazy").setup('plugins')

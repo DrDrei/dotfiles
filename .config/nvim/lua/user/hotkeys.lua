@@ -86,11 +86,11 @@ keymap("n", ",,", "@@", opts)
 -- User Commands
 vim.api.nvim_create_user_command("TestFile", function()
 	local filePath = vim.fn.expand("%:p")
-	if not string.find(filePath, ".test.") then
-		print("This is not a test file.")
+	if string.find(filePath, ".test.") or string.find(filePath, ".spec.") then
+    require("toggleterm").exec("yarn:test:i " .. filePath, 2)
 		return
 	end
-	require("toggleterm").exec("yarn:test:i " .. filePath, 2)
+  print("This is not a test file.")
 end, {})
 
 vim.api.nvim_create_user_command("TestAll", function()
@@ -108,3 +108,6 @@ end, {})
 vim.api.nvim_create_user_command("Build", function()
 	require("toggleterm").exec("yarn", 1)
 end, {})
+
+
+keymap("n", "<leader>lg", ":FloatermNew --width=0.9 --height=0.9 lazygit<cr>", opts)
