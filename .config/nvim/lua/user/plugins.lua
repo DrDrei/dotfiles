@@ -8,32 +8,17 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- vim.cmd([[
---   augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost plugins.lua source <afile> | PackerSync
---   augroup end
--- ]])
-
--- local status_ok, packer = pcall(require, "packer")
--- if not status_ok then
--- 	return
--- end
---
--- packer.init({
--- 	display = {
--- 		open_fn = function()
--- 			return require("packer.util").float({})
--- 		end,
--- 	},
--- })
-
-require("lazy").setup('plugins')
+require("lazy").setup('plugins', {
+  checker = {
+    enabled = true,
+  },
+})
