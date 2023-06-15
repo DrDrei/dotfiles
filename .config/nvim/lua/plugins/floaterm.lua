@@ -1,4 +1,3 @@
 return {
-	"voldikss/vim-floaterm",
-	config = true,
+  "voldikss/vim-floaterm",
 }
