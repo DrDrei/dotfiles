@@ -109,5 +109,4 @@ vim.api.nvim_create_user_command("Build", function()
 	require("toggleterm").exec("yarn", 1)
 end, {})
 
-
 keymap("n", "<leader>lg", ":FloatermNew --width=0.9 --height=0.9 lazygit<cr>", opts)

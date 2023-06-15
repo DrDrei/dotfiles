@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  config = {
+  opts = {
     sections = {
       lualine_c = {},
       lualine_x = {'filetype'},
