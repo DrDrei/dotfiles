@@ -10,8 +10,12 @@ vim.diagnostic.config({
 
 -- All the clients and their configs that we want to use
 local servers = {
-	tailwindcss = {},
 	tsserver = {},
+	lua_ls = {
+		diagnostics = {
+			globals = { "vim" },
+		},
+	},
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

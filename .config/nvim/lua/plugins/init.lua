@@ -14,7 +14,6 @@ return {
 		"hrsh7th/cmp-vsnip",
 		"hrsh7th/vim-vsnip",
 		"xabikos/vscode-javascript",
-		"Mofiqul/vscode.nvim",
 		"kyazdani42/nvim-web-devicons",
 		"akinsho/toggleterm.nvim",
 		"dhruvmanila/telescope-bookmarks.nvim",
