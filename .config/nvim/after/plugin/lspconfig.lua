@@ -12,8 +12,10 @@ vim.diagnostic.config({
 local servers = {
 	tsserver = {},
 	lua_ls = {
-		diagnostics = {
-			globals = { "vim" },
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
 		},
 	},
 }

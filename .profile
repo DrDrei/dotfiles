@@ -10,7 +10,7 @@ or_depth:4 scaling:on origin:(1040,1080) degree:0" "id:AB86A851-16BC-41AD-CB00-3
 s:1920x1080 hz:60 color_depth:8 scaling:off origin:(1920,0) degree:0"'
 
 # Stitch all images together in current dir
-alias convert:all="convert -append *.png out.png"
+alias convert:all="convert -append *.png *.jpg *.pdf out.png"
 
 # kasa integration: https://github.com/python-kasa/python-kasa
 setup-device() {

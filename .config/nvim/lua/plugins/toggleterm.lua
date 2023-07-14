@@ -1,10 +1,3 @@
--- function _G.set_terminal_keymaps()
--- 	local opts = { noremap = true }
--- 	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
--- end
---
--- vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
-
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({
 	cmd = "lazygit",
@@ -20,6 +13,13 @@ function Lazygit_toggle()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua Lazygit_toggle()<CR>", { noremap = true, silent = true })
+
+function _G.set_terminal_keymaps()
+	local opts = { noremap = true }
+	vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+end
+
+vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 return {
 	"akinsho/toggleterm.nvim",
