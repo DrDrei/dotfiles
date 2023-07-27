@@ -79,6 +79,7 @@ keymap("n", "<leader>gp", ":Git push --no-verify<cr>", opts)
 keymap("n", "<leader>gP", ":Git push -f --no-verify<cr>", opts)
 keymap("n", "<leader>gb", ":Git blame<cr>", opts)
 keymap("n", "<leader>gw", ":Gwrite<cr>", opts)
+keymap("n", "<leader>gc", ":Git combine<cr>", opts)
 
 -- Repeat macro
 keymap("n", ",,", "@@", opts)
@@ -87,10 +88,10 @@ keymap("n", ",,", "@@", opts)
 vim.api.nvim_create_user_command("TestFile", function()
 	local filePath = vim.fn.expand("%:p")
 	if string.find(filePath, ".test.") or string.find(filePath, ".spec.") then
-    require("toggleterm").exec("yarn:test:i " .. filePath, 2)
+		require("toggleterm").exec("yarn:test:i " .. filePath, 2)
 		return
 	end
-  print("This is not a test file.")
+	print("This is not a test file.")
 end, {})
 
 vim.api.nvim_create_user_command("TestAll", function()
