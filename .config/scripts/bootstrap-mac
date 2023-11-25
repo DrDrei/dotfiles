@@ -11,7 +11,7 @@ fi
 
 echo 'Checking brew packages...'
 brew tap jakehilborn/jakehilborn 
-brew install neovim tmux node rg fd ruby nvm
+brew install neovim tmux node rg fd ruby nvm obsidian
 
 echo 'Checking brew casks...'
 brew tap homebrew/cask-fonts
