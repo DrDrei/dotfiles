@@ -11,10 +11,10 @@ fi
 
 echo 'Checking brew packages...'
 brew tap jakehilborn/jakehilborn 
-brew install neovim tmux node rg fd ruby nvm obsidian
+brew install neovim tmux node rg fd ruby nvm
 
 echo 'Checking brew casks...'
 brew tap homebrew/cask-fonts
-brew install --cask brave-browser signal iterm2 font-hack-nerd-font
+brew install --cask brave-browser signal iterm2 font-hack-nerd-font obsidian
 
 echo 'Bootstrapping complete.'
